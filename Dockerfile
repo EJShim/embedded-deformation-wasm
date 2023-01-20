@@ -25,5 +25,5 @@ RUN cmake   -G Ninja                                                            
             -DVTK_MODULE_ENABLE_VTK_sqlite:STRING=NO                            \
             ../VTK
 
-RUN ninja install -j7 &&   find . -name '*.o' -delete &&   cd .. && chmod -R 777 VTK-build
+RUN ninja -j7 &&   find . -name '*.o' -delete &&   cd .. && chmod -R 777 VTK-build
 WORKDIR /work
