@@ -1,0 +1,18 @@
+version : '1.0'
+
+services :
+  cmake :
+      build : .
+      image : ejshim/emscripten-vtk
+      volumes : 
+        - ./:/work
+      working_dir: /work/build
+      command : cmake .. -DVTK_DIR=/VTK-build
+  make :
+      image : ejshim/emscripten-vtk
+      volumes:
+        - ./:/work
+      working_dir: /work/build
+      command : make
+      links : 
+        - cmake:cmake
