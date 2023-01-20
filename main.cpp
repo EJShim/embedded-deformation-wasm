@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vtkSmartPointer.h>
 
 int main(){
 
